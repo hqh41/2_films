@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Information{% endblock %}
+{% block content %}
+<div class="create">
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% block page_content %}
+        <div class="titre">
+        </div>
+        <div class="textposit">
+            <br><br><br>
+
+              <h3 class="text-center">Before who's the actor, who are you?</h3>
+            <br><br>
+            <form action="{{ url_for('create') }}" method="post">
+              <div class="col-md-9 col-md-offset-2">
+                <div class="form-group">
+                    <label for="nname" class="col-sm-3 control-label">Nickname</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="name" id="nname" class="form-control">
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="form-group">
+                    <label class="col-md-3" for="radios">Difficulty</label>
+                    <div class="col-sm-9" id="radios">
+                        <label>
+                            <input type="radio" name="options" value="F" checked>
+                            Easy
+                        </label>
+                        <label>
+                            <input type="radio" name="options" value="M">
+                            Normal
+                        </label>
+                        <label>
+                            <input type="radio" name="options" value="D">
+                            Hard
+                        </label>
+                    </div>
+                  </div>
+                </div>
+                <br><br><br>
+                <div class="col-sm-4 bt">
+                    <button type="submit" class="btn bb">Submit</button>
+                </div>
+            </form>
+        </div>
+    {% endblock %}
+
+</div>
+{% endblock %}

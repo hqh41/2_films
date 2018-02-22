@@ -1,0 +1,53 @@
+/*body {
+	position: relative;
+	height: 100%;
+	font-size: 14px;
+	color: #363940;
+}
+body .body {
+	height: 100%;
+}
+.page    { margin: 2em auto; width: 35em; border: 5px solid #ccc;
+padding: 0.8em; background: blue; }
+*/
+body            {background-image: url("base.png"); background-repeat: repeat;}
+div.index       {background-color:white; position: fixed; width: 40em; height: 100%; left: 415px;}
+div.indexbtt    {position: absolute; bottom: 150px;left:200px;}
+div.titre       {background-color: black; border-color:black;background-image: url("titre.jpg");background-repeat:no-repeat;background-position: center; width: 100%; height: 150px;}
+div.create      {background-color: white; position: fixed; width: 40em; height: 100%; left: 415px;}
+div.answer      {background-color: white; position: fixed; width: 40em; height: 100%; left: 415px;}
+div.textposit   {position: fixed;bottom: 130px; margin-left: 50px;}
+div.text        {margin-right: 30px;margin-left: 30px;}
+div.sc          {padding-left: 60px;}
+div.bt          {left:40%;}
+div.photo       {width:300px; height: 400px;}
+div.score       {background-color:black; position: fixed; width: 70%; height: 100%; left: 15%;}
+a.button        { color:white; background-color: black; border-color: black;}
+button.bb       { color:white; background-color: black; border-color: black;}
+a, h1, h2,h3,h4 { color: orange; }
+h1, h2,h3       { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+h3              { text-align:center; font-size: 2em; }
+h4              { font-size: 1.6em; }
+td.score        {color: orange;}
+.page           { margin: 2em auto; width: 35em; border: 5px solid #ccc;
+                  padding: 0.8em; background: white; }
+.entries        { list-style: none; margin: 0; padding: 0; }
+.entries li     { margin: 0.8em 1.2em; }
+.entries li h2  { margin-left: -1em; }
+.add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
+.add-entry dl   { font-weight: bold; }
+.metanav        { text-align: right; font-size: 0.8em; padding: 0.3em;
+                  margin-bottom: 1em; background: #fafafa; }
+.flash          { background: #CEE5F5; padding: 0.5em;
+                  border: 1px solid #AACBE2; }
+.error 			{ background: #F0D6D6; padding: 0.5em; }
+.options		{margin: 0 auto;}
+#films			{display: flex; justify-content: center; flex-direction: row;
+				 border-style: solid; border-color: coral; height: 100%}
+.film			{border-style: solid; border-color: red; margin-top: auto; margin-bottom: auto;
+				padding-left: 30px;padding-right: 30px; text-align: justify;}
+.mode			{text-align: center; vertical-align: middle}
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none; cursor:pointer;
+					-webkit-border-radius: 5px; border-radius: 5px;}

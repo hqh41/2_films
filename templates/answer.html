@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Q&A{% endblock %}
+{% block content %}
+<div class="answer">
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% block page_content %}
+        <div class="col-md-2 col-md-offset-2">
+            <br><br>
+            <h2 class="text-center">{{ session['count'] }} / 10</h2>
+        </div>
+        <div class="col-md-2 col-md-offset-4">
+            <br><br>
+            <h2 class="text-center">{{ session['score'] }}</h2>
+        </div>
+        <div class="col-md-4 col-md-offset-2">
+            <br><br>
+            <img src="{{session['cover1']}}" class="photo" alt="Pictures can't show">
+            <h5 class="text-center">{{ session['film_1'] }}</h5>
+        </div>
+        <div> </div>
+        <div class="col-md-4">
+            <br><br>
+            <img src="{{session['cover2']}}" class="photo" alt="Pictures can't show">
+            <h5 class="text-center">{{ session['film_2'] }}</h5>
+        </div>
+        {% block formulaire %}
+        {% endblock %}
+
+{#        <div class="col-md-10">#}
+{#            <br>#}
+{#            <form action="{{ url_for('answer') }}" method="post">#}
+{#                <br><br><br>#}
+{#                <div class="form-group">#}
+{#                    {% for opt in options %}#}
+{#                        <div class="radio">#}
+{#                            <label>#}
+{#                                <input type="radio" name="optionsRadios" value="{{ opt }}" checked>#}
+{#                                {{ opt }}#}
+{#                            </label>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#                <br><br>#}
+{#                <div class="col-sm-offset-4 col-sm-4">#}
+{#                    <button type="submit" class="btn btn-info">Soumettre</button>#}
+{#                </div>#}
+{#            </form>#}
+{#        </div>#}
+    {% endblock %}
+
+    <button type="button" onclick="quitter()" class="quit_button"> Quit </button>
+</div>
+{% endblock %}

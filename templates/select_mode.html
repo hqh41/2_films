@@ -1,0 +1,23 @@
+{% extends "answer.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Who's the Actor?{% endblock %}
+
+<body>
+	{% block formulaire %}
+		<div class="col-md-6 col-md-offset-3">
+			<form method="POST">
+                <br><br>
+				<label>
+					<input type="submit" name="optionsMode" id="duo" value="50:50">
+				</label>
+				<label>
+					<input type="submit" name="optionsMode" id="carre" value="Square">
+				</label>
+				<label>
+                    <input type="submit" name="optionsMode" id="cache" value="Shotgun">
+				</label>
+			</form>
+		</div>
+	{% endblock %}
+</body>

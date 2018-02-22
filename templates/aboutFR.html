@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}About{% endblock %}
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% block page_content %}
+    <div class="page-header">
+        <div class="col-md-8 col-md-offset-2">
+            <br><br><br>
+            <h2 class="text-center">Instructions du jeu</h2>
+            <p class="bg-info"> Bonjour et bienvenue dans « Who’s the actor ?!» </p>
+                
+            <p class="bg-info">  Voulez vous tester vos connaissances cinématographiques ? Vous êtes au bon endroit !
+                
+                Le principe de notre jeu est très simple : nous vous proposons deux films, à vous de nous dire qui est l’acteur en commun ! Simple non ? 
+                Pour jouer, après avoir choisi votre niveau de difficulté, vous disposerez de dix questions et récolterez des points à chaque bonne réponse. 
+                
+                A chaque question, 3 modalités de réponses s'offrent à vous : duo, carré ou cash. 
+                Si vous sélectionnez le mode de réponse duo, vous aurez droit à deux propositions et 1 point en cas de bonne réponse. 
+                Si vous sélectionnez le mode de réponse carré, vous aurez droit à quatre propositions et 3 points si vous répondez correctement.
+                Si vous sélectionnez le mode de réponse cash, vous devrez répondre  directement et vous remporterez 5 points par réponse juste !
+                
+                À la fin du jeu, comptabilisez l'ensemble de vos points pour connaître votre score final. 
+                
+                Pensez-vous être capable d’entrer dans notre top 10 ? À vous de jouer !</p>
+            <br><br><br>
+            <a class="btn btn btn-primary btn-lg btn-block" href="{{ url_for('create')}}" role="button">Jouer</a>
+        </div>
+    </div>
+    {% endblock %}
+
+</div>
+{% endblock %}

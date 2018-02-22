@@ -1,0 +1,29 @@
+{% extends "answer.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Who's the Actor?{% endblock %}
+
+{% block formulaire %}
+	<form method="post" >
+		<div class="col-md-9 col-md-offset-2">
+			<h2> Who's the common actor?</h2>
+		</div>
+		<div class="col-md-5 col-md-offset-2">
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="options1" value="{{ option_a }}" checked>
+					{{ option_a }}
+				</label>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="options2" value="{{ option_b }}">
+					{{ option_b }}
+				</label>
+			</div>
+		</div>
+		<div class="bt col-sm-4"><button class="btn bb" type="submit">Submit</button></div>
+	</form>
+{% endblock %}

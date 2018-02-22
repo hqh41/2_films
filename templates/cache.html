@@ -1,0 +1,21 @@
+{% extends "answer.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Who's the Actor?{% endblock %}
+
+{% block formulaire %}
+<div class="col-md-9 col-md-offset-2">
+	<h2> Who's the common actor?</h2>
+	<br>
+	<form method="post" >
+		<div class="text">
+			<label>
+				Your answer
+				<input type="text" name="reponseCache" id="reponseCache">
+			</label>
+    </div>
+		<br>
+		<div class="col-sm-4 bt"><button class="btn bb" type="submit">Submit</button></div>
+	</form>
+</div>
+{% endblock %}

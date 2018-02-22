@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Who's the Actor?{% endblock %}
+{% block content %}
+<div class="score">
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% block page_content %}
+    <div class="page-header">
+        <div class="col-md-3 col-md-offset-3">
+            <br><br><br>
+            <h2 class="text-center">Your score: {{ score }}</h2>
+        </div>
+        <div class="col-md-3">
+            <br><br><br>
+            <h2 class="text-center">Top 10 - {{session["difficulte"]}}</h2>
+            <br>
+            <table class="table table-striped">
+                <tr>
+                  <th>Nickname</th>
+                  <th>Score</th>
+                </tr>
+                {% for message in top_10 %}
+                    <tr>
+                        <td class="score">{{ message[0] }}</td>
+                        <td class="score">{{ message[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+    {% endblock %}
+
+</div>
+{% endblock %}

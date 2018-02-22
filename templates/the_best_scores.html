@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Who's the Actor?{% endblock %}
+{% block content %}
+<div class="score">
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% block page_content %}
+      <div class="titre">
+      </div>
+      <div class="sc">
+        <div class="col-md-3">
+            <h4 class="text-center">Top 10 Easy</h4>
+            <table class="table table-striped">
+                <tr>
+                  <th>Nickname</th>
+                  <th>Score</th>
+                </tr>
+                {% for message_F in top_10_F %}
+                    <tr>
+                        <td class="score">{{ message_F[0] }}</td>
+                        <td class="score">{{ message_F[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+        <div class="col-md-3 col-md-offset-1">
+            <h4 class="text-center">Top 10 Normal</h4>
+            <table class="table table-striped">
+                <tr>
+                  <th>Nickname</th>
+                  <th>Score</th>
+                </tr>
+                {% for message_M in top_10_M %}
+                    <tr>
+                        <td class="score">{{ message_M[0] }}</td>
+                        <td class="score">{{ message_M[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+        <div class="col-md-3 col-md-offset-1">
+            <h4 class="text-center">Top 10 Hard</h4>
+            <table class="table table-striped">
+                <tr>
+                  <th>Nickname</th>
+                  <th>Score</th>
+                </tr>
+                {% for message_D in top_10_D %}
+                    <tr>
+                        <td class="score">{{ message_D[0] }}</td>
+                        <td class="score">{{ message_D[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+      </div>
+        {% endblock %}
+
+</div>
+{% endblock %}

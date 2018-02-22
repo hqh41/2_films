@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Instructions{% endblock %}
+{% block content %}
+<div class="index">
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% block page_content %}
+          <div class="titre">
+          </div>
+          <div class="text">
+            <br>
+            <h3 class="text-center">Game instructions</h3>
+            <br>
+            <p> Hello, and welcome to « Who’s the actor ?!» </p>
+            <p>  Do you want to test your knowledge about movies and actors ? You found the right game !
+
+                This game is really easy to play : You have to guess the actor in common for the two films that are displayed to you. Very simple, right?
+                To play, after choosing your level of difficulty between easy, normal and hard, the game will start.
+                Each game contains 10 questions, with every correct answer you will gain points according to the rules below :
+
+                To each question, you have 3 ways of answering : 50:50, square, or shotgun.
+                If you select 50:50, you will have 2 propositions, and if your answer is correct you win 1 point.
+                If you select square, you will have 4 propositions, and if your answer is correct you win 3 points.
+                If you select shotgun, you will have to write the actor's name, and if your answer is correct you win 5 points.
+
+                At the game's end, you'll have the total of all your points, and if your score is high enough you will see your name in the top10.
+
+                Think you can be the best? Game on!</p>
+            <br>
+            <a class="btn btn button btn-lg btn-block" href="{{ url_for('create')}}" role="button">Play</a>
+        </div>
+
+    {% endblock %}
+
+</div>
+{% endblock %}
