@@ -100,6 +100,7 @@ def create():
 		player = Player(nickname=nickname, diff=diff)
 		player.created = datetime.now()
 		player.save()
+		#save之后自动生成player.id
 		flash('Welcome, {}'.format(player.nickname))
 		session['player'] = unicode(player.id)
 		session['diff'] = diff_dict[diff]
@@ -111,7 +112,7 @@ def create():
 			session["difficulte"] = "Hard"
 		session['count'], session['score'] = 1, 0
 		session['bonus'] = 0
-		session['malus'] = 0
+		#session['malus'] = 0
 		return redirect(url_for('mode'))
 
 
@@ -125,7 +126,8 @@ def mode():
 		if player is None:
 			session.pop('player', None)
 			return redirect(url_for('create'))
-
+	#post执行的部分
+	#redirect默认是get方法
 	if request.method == 'POST':
 		m = request.form.get('optionsMode')
 		if m == "Square":
@@ -140,6 +142,7 @@ def mode():
 
    # session['count'] = 1
    # session['score'] = 1
+   #get方法的执行部分
 	if session['count'] == 11:
 		score = session['score']
 		session.pop('count')
@@ -150,7 +153,7 @@ def mode():
 		return render_template('end.html', score=score, top_10=top_10)
 
 	film1, film2, option_list, session['name'] = main_func(session['diff'])
-	print(session['name'])
+	#print(session['name'])
 	cover1 = game.get_cover(film1)
 	cover2 = game.get_cover(film2)
 
@@ -183,6 +186,7 @@ def carre():
 		a = answer.encode('ascii', 'ignore')
 		if egal(s, a):
 			session['score'] += 3
+			#选该模式，只要连续答对三次，就再加一分
 			session['bonus'] += 1
 			session['malus'] = 0
 			if session['bonus']>=3:

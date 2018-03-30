@@ -30,17 +30,17 @@ def get_movie_list(top) :
 	if len(top_actor) <= 1:
 		get_acteur_e_liste()
 	indice = randint(0,top-1) 
-	print indice
-	print len(top_actor)
+	#print indice
+	#print len(top_actor)
 	global actor_nom
 	actor_nom = top_actor[indice]
 	search = tmdb.Search()
 	actor1 = search.person(query=actor_nom)
-	print len(actor1)
+	#print len(actor1)
 	while not actor1:
 		actor1 = search.person(query=actor_nom)
-	print "search results: "
-	print len(actor1)
+	#print "search results: "
+	#print len(actor1)
 	actor_id = search.results[0]['id']
 	actor = tmdb.People(actor_id)
 	if not actor :
